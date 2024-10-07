@@ -1,4 +1,4 @@
-# AgriCode: A Tool for Code Prediction In Agricultural Texts
+# AgriCode: a tool for code prediction in agricultural texts
 The code and supplementary material to support our submission to System Demonstrations of the 31th International Conference of Computational Linguistics (COLING'25)
 
 ## Structure of the repository:
@@ -9,45 +9,79 @@ The code and supplementary material to support our submission to System Demonstr
 
 - **survey_classification.xlsx** -- the complete list of results for the 7-class and 15-class settings, for both paragraph and sentence methods, using the original (non-augmented) data, data augmented by replacing adjectives and adverbs using BERT, data augmented using ChatGPT, and data augmented using Retrieval-Augmented Generation (RAG)
 
-- **prompt_engineering.xlsx** -- decription of the prompts used for querrying in the RAG workflow (for 15-class setting please refer directly to the code)
+- **prompt_engineering.xlsx** -- decription of the prompts used for querrying in the RAG workflow (for the 15-class setting please refer directly to the code)
 
-### Installation (to run the web application on a local machine)
+### Data preparation
 
-There are few Python packages that need to be installed to run the application
+- **workflow/data_loader_paragraphs.py** -- data set construction for the Paragraph method
 
-1. Install streamit library for running web application:
+- **workflow/data_loader_sentences.py** -- data set construction for the Setence method
+
+### Data augmentation
+
+- **workflow/data_augmentation (BERT).ipynb** -- train set augmentation by replacing adjectives and adverbs using BERT
+
+- **workflow/data_augmentation (ChatGPT).ipynb** -- train set augmentation using ChatGPT
+
+- **workflow/data_augmentation (RAG 7-paragraphs).ipynb** -- train set augmentation using RAG for paragraphs and the 7-class setting
+
+- **workflow/data_augmentation (RAG 7-sentences).ipynb** -- train set augmentation using RAG for sentences and the 7-class setting
+
+- **workflow/data_augmentation (RAG 15-paragraphs).ipynb** -- train set augmentation using RAG for paragraphs and the 15-class setting
+
+- **workflow/data_augmentation (RAG 15-sentences).ipynb** -- train set augmentation using RAG for sentences and the 15-class setting
+
+### Evaluation
+
+- **workflow/segment_classification (7 classes).ipynb** -- model learning and evaluation for the 7-class setting
+
+- **workflow/segment_classification (15 classes).ipynb** -- model learning and evaluation for the 15-class setting
+
+### AgriCode tool
+
+- **Home.py** -- the homepage of the web application, where the selection between the Paragraph and Sentence methods can be made
+
+- **pages/Paragraphs.py** -- text annotation for 7 and 15 classes using the Paragraph method
+
+- **pages/Sentences.py** -- text annotation for 7 and 15 classes using the Sentence method
+
+## To run the web application on a local machine:
+
+### Installation
+
+There are few Python packages that need to be installed to run the application:
+
+1. Install streamit library for running web application
 ```sh
 pip install streamlit
 ```
-2. Install transformers library for natural language processing (NLP):
+2. Install transformers library for natural language processing (NLP)
 ```sh
 pip install transformers
 ```
 
-3. Install torch library for deep learning and tensor computations:
+3. Install torch library for deep learning and tensor computations
 ```sh
 pip install torch
 ```
-4. Install nltk library for text processing and NLP:
+4. Install nltk library for text processing and NLP
 
 ```sh
 pip install nltk
 ```
-5. Install sentencepiece library for text tokenization:
+5. Install sentencepiece library for text tokenization
 
 ```sh
 pip install sentencepiece
 ```
-6. Install numpy library for numerical computations:
+6. Install numpy library for numerical computations
 
 ```sh
 pip install numpy
 ```
 
-### To run the web application
+### To run the application
 
 ```sh
 streamlit run Home.py
 ```
-
-To be wrtten more.
