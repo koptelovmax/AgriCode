@@ -412,7 +412,7 @@ def main():
                 st.markdown('''**Legend:**  
                         Other (not pertinent)  
                         :red-background[limitations and barriers]  
-                        :blue-background[Stakeholders’ expectations]  
+                        :blue-background[stakeholders’ expectations]  
                         :green-background[market opportunities]  
                         :violet-background[valorization]  
                         :orange-background[company+experts]  
@@ -420,18 +420,18 @@ def main():
             else:
                 st.markdown('''**Legend:**  
                         Other (not pertinent)  
-                        :red-background[Stakeholders’ expectations > valorization/ PHA-applications]  
+                        :red-background[stakeholders’ expectations > valorization/ PHA-applications]  
                         :blue-background[limitations and barriers > valorization /PHA-applications]  
                         :green-background[market opportunities > PHA MO]  
-                        :violet-background[market opportunities > PHA-Applications MO]  
+                        :violet-background[market opportunities > PHA-applications MO]  
                         :orange-background[valorization > current structures]  
                         :grey-background[company+experts]  
                         :rainbow-background[limitations and barriers > Main issues and challenges for extracted/microbial protein]  
                         :red[type of stream]  
-                        :blue[Stakeholders’ expectations > PHA expectation]  
+                        :blue[stakeholders’ expectations > PHA expectation]  
                         :green[limitations and barriers > Main issues and challenges for PHA]  
                         :violet[market opportunities > MP MO]  
-                        :orange[Stakeholders’ expectations > MP]  
+                        :orange[stakeholders’ expectations > MP]  
                         :grey[valorization > satisfaction]  
                         :rainbow[valorization > advantages]''')
         #st.write("Predicted code: ", "**"+pred_label+"**")
