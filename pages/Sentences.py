@@ -21,12 +21,20 @@ def load_tokenizer():
     return BertTokenizer.from_pretrained("bert-base-uncased", do_lower_case=True)
 
 @st.cache_resource
-def load_model7_sent():
+def load_model_7_sent():
     return BertForSequenceClassification.from_pretrained("koptelovmax/bert-ecozept-sentences")
 
 @st.cache_resource
-def load_model15_sent():
+def load_model_7_sent_augm():
+    return BertForSequenceClassification.from_pretrained("koptelovmax/bert-ecozept-sents-augm")
+
+@st.cache_resource
+def load_model_15_sent():
     return BertForSequenceClassification.from_pretrained("koptelovmax/bert-ecozept-sentences-15")
+
+@st.cache_resource
+def load_model_15_sent_augm():
+    return BertForSequenceClassification.from_pretrained("koptelovmax/bert-ecozept-sents-augm-15")
 
 def set_header():
     LOGO_IMAGE = "agriloop-logo.png"
@@ -239,9 +247,9 @@ with tab1:
         )    
     
     paragraphs = st.text_area(
-    "Your paragraph:",
+    "Your paragraphs:",
     "Yes, of course! We are producing all sorts of different potato convenient products such as croquettes, french fries, “Croustille”, and a range of different stuffed speciality potato products. But all our products are frozen convenient potato products.  I am working for the department of sustainability, energy and environment of our company and I am responsible for issues related to sustainability, energy, waste, and environment. I am responsible for the valorisation of our potato wastes through our biogas plant.\n\n"
-    "We are very happy with our current valorisation process. The valorisation is connected to a decent amount of effort but it is working really well. It is very important for us to get rid of the residues from our food production operation as quick as possible and we are more or less able to feed the residues into the biogas plant the moment the waste accumulates. The waste from the processing has to be removed continuously and this works very well. The residues of the biogas plant also need to be disposed every day and this works really well as well. Our cooperation with the logistics company works flawless and this is really important to us as we are not able to store the residues. They would need to be stored inside and this would be very costly as the hygiene would be an issue.",
+    "Our food production operation runs all year round at least ﬁve day a week and sometimes even on the weekend. Our operation is relatively constant throughout the entire year. We reduce our processing volume during July as this is traditionally our company’s holiday month. And most of our workers are on holiday leave during this time of the year. But the machines need to constantly run so we just reduce the volume during this me of the year. But that is not an issue in terms of availability of feedstock.",
     height=160,
     )
        
@@ -262,25 +270,53 @@ mode = st.radio(
 ["7 classes", "15 classes"],
 )
 
-titles_flag = st.checkbox("Take titles into account", value=True)
+col_1, col_2 = st.columns([1,1], vertical_alignment="top")
+with col_1:
+    # Select considering titles:
+    titles_flag = st.checkbox("Take titles into account", value=True)
+with col_2:
+    # Select augmented classifier:
+    augm = st.checkbox("Improved classifier (data augmentation)", value=True)
 
 # Select 7 or 15 class setting:
-if mode == "7 classes":
-    # Load model:
-    model = load_model7_sent()
-    model.to('cpu')
-    if titles_flag:
-        st.write("You selected 7 class setting, taking into account titles.")
+if mode == "7 classes":  
+    if augm:
+        # Load augmented model:
+        model = load_model_7_sent_augm()
+        model.to('cpu')
+
+        if titles_flag:
+            st.write("You have selected the 7-class setting with an improved classifier, taking into account titles.")
+        else:
+            st.write("You have selected the 7-class setting with an improved classifier.")
     else:
-        st.write("You selected 7 class setting.")
+        # Load standard model:
+        model = load_model_7_sent()
+        model.to('cpu')
+        
+        if titles_flag:
+            st.write("You have selected the 7-class setting, taking into account titles.")
+        else:
+            st.write("You have selected the 7-class setting.")    
 else:
-    # Load model:
-    model = load_model15_sent()
-    model.to('cpu')
-    if titles_flag:
-        st.write("You selected 15 class setting, taking into account titles.")
+    if augm:
+        # Load augmented model:
+        model = load_model_15_sent_augm()
+        model.to('cpu')
+
+        if titles_flag:
+            st.write("You have selected the 15-class setting with an improved classifier, taking into account titles.")
+        else:
+            st.write("You have selected the 15-class setting with an improved classifier.")
     else:
-        st.write("You selected 15 class setting.")
+        # Load standard model:
+        model = load_model_15_sent()
+        model.to('cpu')
+        
+        if titles_flag:
+            st.write("You have selected the 15-class setting, taking into account titles.")
+        else:
+            st.write("You have selected the 15-class setting.")
 
 def prediction(segment_text):
     test_ids = []
