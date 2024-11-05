@@ -61,11 +61,11 @@ The code and supplementary material to support our submission to System Demonstr
 
 2) Fix the data set names in "Open the data" section in *segment_classification (7 classes).ipynb* or *segment_classification (15 classes).ipynb* depending on the setting
 
-3) Run in Google Colab:
+3) Run in Google Colab, for the 7-class setting:
 
 `workflow/segment_classification (7 classes).ipynb > Runtime > Run all`
 
-or, depending on the setting:
+for the 15-class setting:
 
 `workflow/segment_classification (15 classes).ipynb > Runtime > Run all`
 
