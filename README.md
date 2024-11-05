@@ -5,11 +5,11 @@ The code and supplementary material to support our submission to System Demonstr
 
 ### Supplementary material
 
-- **Agriloop_Delphi_Codesystem.(xlsx,png)** -- the full version of the Ecozept's code system used to annotate the interview responses of Agriloop participants
+- **annex/Agriloop_Delphi_Codesystem.(xlsx,png)** -- the full version of the Ecozept's code system used to annotate the interview responses of Agriloop participants
 
-- **survey_classification.xlsx** -- the complete list of results for the 7-class and 15-class settings, for both paragraph and sentence methods, using the original (non-augmented) data, data augmented by replacing adjectives and adverbs using BERT, data augmented using ChatGPT, and data augmented using Retrieval-Augmented Generation (RAG)
+- **annex/survey_classification.xlsx** -- the complete list of results for the 7-class and 15-class settings, for both paragraph and sentence methods, using the original (non-augmented) data, data augmented by replacing adjectives and adverbs using BERT, data augmented using ChatGPT, and data augmented using Retrieval-Augmented Generation (RAG)
 
-- **prompt_engineering.xlsx** -- decription of the prompts used for querrying in the RAG workflow (for the 15-class setting please refer directly to the code)
+- **annex/prompt_engineering.xlsx** -- decription of the prompts used for querrying in the RAG workflow (for the 15-class setting please refer directly to the code)
 
 ### Data preparation
 
@@ -44,6 +44,32 @@ The code and supplementary material to support our submission to System Demonstr
 - **pages/Paragraphs.py** -- text annotation for 7 and 15 classes using the Paragraph method
 
 - **pages/Sentences.py** -- text annotation for 7 and 15 classes using the Sentence method
+
+## Data availability:
+
+### Processed data (to reconstruct data augmentation and evaluation):
+
+- **workflow/data/7-classes** -- original and augmented train and test data for both the Paragraph and Sentence methods in the 7-class setting
+
+- **workflow/data/15-classes** -- original and augmented train and test data for both the Paragraph and Sentence methods in the 15-class setting
+
+## To reconstruct the experiments:
+
+### Model learning and evaluation for the 7-class setting
+
+1) Put the code and the data from the **workflow/** directory to your google drive
+
+2) Fix the data set names in "Open the data" section in *segment_classification (7 classes).ipynb* or *segment_classification (15 classes).ipynb* depending on the setting
+
+3) Run in Google Colab:
+
+`workflow/segment_classification (7 classes).ipynb > Runtime > Run all`
+
+or
+
+`workflow/segment_classification (15 classes).ipynb > Runtime > Run all`
+
+depending on the setting.
 
 ## To run the web application on a local machine:
 

@@ -363,10 +363,27 @@ def main():
 
                     # Predict label for each sentence:
                     for i in range(len(segment_sents)):
+                        # Add previous and next sentences if they come from same paragraph:
+                        if i==0: # the 1st sentence of paragraph
+                          if len(segment_sents)>1:
+                            # add current and next sentences:
+                            segment = segment_sents[i]+' '+segment_sents[i+1]
+                          else:
+                            # add current sentence only:
+                            segment = segment_sents[i]
+                        elif i<len(segment_sents)-1: # i-th sentence of paragraph
+                          # add previous, current and next sentences:
+                          segment = segment_sents[i-1]+' '+segment_sents[i]+' '+segment_sents[i+1]
+                        else: # last sentence of paragraph
+                          # add previous and current sentences:
+                          segment = segment_sents[i-1]+' '+segment_sents[i]
+                        
                         if titles_flag:
-                            code_id = prediction(titles+"\n\n"+segment_sents[i])
+                            #code_id = prediction(titles+"\n\n"+segment_sents[i])
+                            code_id = prediction(titles+"\n\n"+segment)
                         else:
-                            code_id = prediction(segment_sents[i])
+                            #code_id = prediction(segment_sents[i])
+                            code_id = prediction(segment)
                         
                         # Highlight each sentence w.r.t. legend and predicted code:
                         if code_id == 1:
@@ -393,10 +410,27 @@ def main():
                     
                     # Predict label for each sentence:
                     for i in range(len(segment_sents)):
+                        # Add previous and next sentences if they come from same paragraph:
+                        if i==0: # the 1st sentence of paragraph
+                          if len(segment_sents)>1:
+                            # add current and next sentences:
+                            segment = segment_sents[i]+' '+segment_sents[i+1]
+                          else:
+                            # add current sentence only:
+                            segment = segment_sents[i]
+                        elif i<len(segment_sents)-1: # i-th sentence of paragraph
+                          # add previous, current and next sentences:
+                          segment = segment_sents[i-1]+' '+segment_sents[i]+' '+segment_sents[i+1]
+                        else: # last sentence of paragraph
+                          # add previous and current sentences:
+                          segment = segment_sents[i-1]+' '+segment_sents[i]
+                        
                         if titles_flag:
-                            code_id = prediction(titles+"\n\n"+segment_sents[i])
+                            #code_id = prediction(titles+"\n\n"+segment_sents[i])
+                            code_id = prediction(titles+"\n\n"+segment)
                         else:
-                            code_id = prediction(segment_sents[i])
+                            #code_id = prediction(segment_sents[i])
+                            code_id = prediction(segment)
                         
                         # Highlight each sentence w.r.t. legend and predicted code:
                         if code_id == 1:
