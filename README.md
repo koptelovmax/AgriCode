@@ -1,9 +1,9 @@
 # AgriCode: a tool for code prediction in agricultural texts
 The code and supplementary material to support our submission to System Demonstrations of the 31th International Conference of Computational Linguistics (COLING'25)
 
-## Structure of the repository:
+## Structure of the repository
 
-### Supplementary material
+### Supplementary material:
 
 - **annex/Agriloop_Delphi_Codesystem.(xlsx,png)** -- the full version of the Ecozept's code system used to annotate the interview responses of Agriloop participants
 
@@ -11,13 +11,13 @@ The code and supplementary material to support our submission to System Demonstr
 
 - **annex/prompt_engineering.xlsx** -- decription of the prompts used for querrying in the RAG workflow (for the 15-class setting please refer directly to the code)
 
-### Data preparation
+### Data preparation:
 
 - **workflow/data_loader_paragraphs.py** -- data set construction for the Paragraph method
 
-- **workflow/data_loader_sentences.py** -- data set construction for the Setence method
+- **workflow/data_loader_sentences.py** -- data set construction for the Sentence method
 
-### Data augmentation
+### Data augmentation:
 
 - **workflow/data_augmentation (BERT).ipynb** -- train set augmentation by replacing adjectives and adverbs using BERT
 
@@ -31,13 +31,13 @@ The code and supplementary material to support our submission to System Demonstr
 
 - **workflow/data_augmentation (RAG 15-sentences).ipynb** -- train set augmentation using RAG for sentences and the 15-class setting
 
-### Evaluation
+### Evaluation:
 
 - **workflow/segment_classification (7 classes).ipynb** -- model learning and evaluation for the 7-class setting
 
 - **workflow/segment_classification (15 classes).ipynb** -- model learning and evaluation for the 15-class setting
 
-### AgriCode tool
+### AgriCode tool:
 
 - **Home.py** -- the homepage of the web application, where the selection between the Paragraph and Sentence methods can be made
 
@@ -45,7 +45,7 @@ The code and supplementary material to support our submission to System Demonstr
 
 - **pages/Sentences.py** -- text annotation for 7 and 15 classes using the Sentence method
 
-## Data availability:
+## Data availability
 
 ### Processed data (to reconstruct data augmentation and evaluation):
 
@@ -53,9 +53,9 @@ The code and supplementary material to support our submission to System Demonstr
 
 - **workflow/data/15-classes** -- original and augmented train and test data for both the Paragraph and Sentence methods in the 15-class setting
 
-## To reconstruct the experiments:
+## To reconstruct the experiments
 
-### Model learning and evaluation for the 7-class setting
+### Model learning and evaluation for the 7-class setting:
 
 1) Put the code and the data from the **workflow/** directory to your google drive
 
@@ -65,11 +65,9 @@ The code and supplementary material to support our submission to System Demonstr
 
 `workflow/segment_classification (7 classes).ipynb > Runtime > Run all`
 
-or
+or, depending on the setting:
 
 `workflow/segment_classification (15 classes).ipynb > Runtime > Run all`
-
-depending on the setting.
 
 ## To run the web application on a local machine:
 
