@@ -61,9 +61,13 @@ The code and supplementary material to support our submission to System Demonstr
 
 2) Fix the data set names in "Open the data" section in *segment_classification (7 classes).ipynb* or *segment_classification (15 classes).ipynb* depending on the setting
 
-3) Run in Google Colab, for the 7-class setting: `segment_classification (7 classes).ipynb > Runtime > Run all`
+3) Run in Google Colab, for the 7-class setting: 
 
-for the 15-class setting: `segment_classification (15 classes).ipynb > Runtime > Run all`
+`segment_classification (7 classes).ipynb > Runtime > Run all`
+
+for the 15-class setting: 
+
+`segment_classification (15 classes).ipynb > Runtime > Run all`
 
 ## To run the web application on a local machine:
 
