@@ -9,7 +9,7 @@ The code and supplementary material to support our submission to System Demonstr
 
 - **annex/survey_classification.xlsx** -- the complete list of results for the 7-class and 15-class settings, for both paragraph and sentence methods, using the original (non-augmented) data, data augmented by replacing adjectives and adverbs using BERT, data augmented using ChatGPT, and data augmented using Retrieval-Augmented Generation (RAG)
 
-- **annex/prompt_engineering.xlsx** -- decription of the prompts used for querrying in the RAG workflow (for the 15-class setting please refer directly to the code)
+- **annex/prompt_engineering.xlsx** -- description of the prompts used for querrying in the RAG workflow (for the 15-class setting please refer directly to the code)
 
 ### Data preparation:
 
