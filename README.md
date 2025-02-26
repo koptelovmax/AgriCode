@@ -1,5 +1,5 @@
 # AgriCode: a tool for code prediction in agricultural texts
-The code and supplementary material to support our submission to System Demonstrations of the 31th International Conference of Computational Linguistics (COLING'25)
+The code and supplementary material to support our submission "AgriCode: Automated coding for qualitative research and its application to the valorization of agricultural residues" to the SoftwareX journal
 
 ## Structure of the repository
 
@@ -44,30 +44,6 @@ The code and supplementary material to support our submission to System Demonstr
 - **pages/Paragraphs.py** -- text annotation for 7 and 15 classes using the Paragraph method
 
 - **pages/Sentences.py** -- text annotation for 7 and 15 classes using the Sentence method
-
-## Data availability
-
-### Processed data (to reconstruct data augmentation and evaluation):
-
-- **workflow/data/7-classes** -- original and augmented train and test data for both the Paragraph and Sentence methods in the 7-class setting
-
-- **workflow/data/15-classes** -- original and augmented train and test data for both the Paragraph and Sentence methods in the 15-class setting
-
-## To reconstruct the experiments
-
-### Model learning and evaluation for the 7-class setting:
-
-1) Put the code and the data from the **workflow/** directory to your google drive
-
-2) Fix the data set names in "Open the data" section in *segment_classification (7 classes).ipynb* or *segment_classification (15 classes).ipynb* depending on the setting
-
-3) Run in Google Colab, for the 7-class setting: 
-
-`segment_classification (7 classes).ipynb > Runtime > Run all`
-
-for the 15-class setting: 
-
-`segment_classification (15 classes).ipynb > Runtime > Run all`
 
 ## To run the web application on a local machine:
 

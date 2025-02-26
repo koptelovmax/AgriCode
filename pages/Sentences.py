@@ -248,7 +248,7 @@ with tab1:
     
     paragraphs = st.text_area(
     "Your paragraphs:",
-    "Yes, of course! We are producing all sorts of different potato convenient products such as croquettes, french fries, “Croustille”, and a range of different stuffed speciality potato products. But all our products are frozen convenient potato products.  I am working for the department of sustainability, energy and environment of our company and I am responsible for issues related to sustainability, energy, waste, and environment. I am responsible for the valorisation of our potato wastes through our biogas plant.\n\n"
+    "We are producing all sorts of different potato convenient products such as croquettes, french fries, “Croustille”, and a range of different stuffed speciality potato products. But all our products are frozen convenient potato products.  I am working for the department of sustainability, energy and environment of our company and I am responsible for issues related to sustainability, energy, waste, and environment. I am responsible for the valorisation of our potato wastes through our biogas plant.\n\n"
     "Our food production operation runs all year round at least ﬁve day a week and sometimes even on the weekend. Our operation is relatively constant throughout the entire year. We reduce our processing volume during July as this is traditionally our company’s holiday month. And most of our workers are on holiday leave during this time of the year. But the machines need to constantly run so we just reduce the volume during this me of the year. But that is not an issue in terms of availability of feedstock.",
     height=160,
     )
